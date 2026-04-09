@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Island+Moments&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Island+Moments&family=Italiana&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Island+Moments&family=Italiana&family=Italianno&display=swap');
+
+body {
+    background-image: url("unnamed.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  
+  /* centralização */
+  .centro {
+    color: rgb(241, 237, 237);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  /* botões */
+  button {
+    background: #FF4F81;
+    border: none;
+    padding: 10px 30px;
+    color: white;
+    border-radius: 5px;
+    margin: 10px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background: #FF2E6D;
+  }
+  
+  /* inputs */
+  input {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    border: none;
+    width: 250px;
+  }
+  
+  /* header */
+  header {
+    background: #111;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  /* cards */
+  .card {
+    background: #1F2937;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+  }
