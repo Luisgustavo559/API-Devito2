@@ -1,58 +1,96 @@
-@import url('https://fonts.googleapis.com/css2?family=Island+Moments&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Island+Moments&family=Italiana&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Island+Moments&family=Italiana&family=Italianno&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Island+Moments&Sdisplay=swap');
+@import url('https://fonts.googleapis.com/css2?family=Italiana&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');
 
 body {
-    background-image: url("unnamed.webp");
+    background-image: url("Foto/unnamed.webp");
     background-repeat: no-repeat;
     background-size: cover;
-  }
+    margin: 0;
+    font-family: 'Italiana', sans-serif; /* Exemplo de uso das suas fontes */
+}
   
-  
-  /* centralização */
-  .centro {
+
+.fundo-corredores {
+    background-image: url("");
+}
+/* Centralização */
+.centro {
     color: rgb(241, 237, 237);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100vh;
-  }
-  
- a{
+}
+p{
+    p {
+       color: white;
+      }
+}
+
+/* Estilo do Botão (que na verdade é um Link) */
+a {
+    display: inline-block; 
     background: #FF4F81;
     border: none;
     padding: 10px 30px;
     color: white;
     border-radius: 5px;
-    margin: 10px;
+    text-decoration: none; 
     cursor: pointer;
-  }
-  
-  button:hover {
+    transition: 0.3s; /* Deixa a mudança de cor suave */
+}
+
+/* Efeito ao passar o mouse */
+a:hover {
     background: #FF2E6D;
-  }
-  
-  /* inputs */
-  input {
+}
+
+.form {
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 15px;
+    width: 350px;
+    margin: auto;                    /* já estava bom */
+    
+    /* Melhor centralização vertical e horizontal */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    border: 1px solid rgba(255, 77, 166, 0.5);
+    box-shadow: 0 0 25px rgba(255, 77, 166, 0.3);
+}
+
+
+
+
+/* Inputs */
+input {
     padding: 10px;
     margin: 10px;
     border-radius: 5px;
     border: none;
     width: 250px;
-  }
-  
-  /* header */
-  header {
+}
+
+/* Header */
+header {
+  display: flex;
     background: #111;
-    padding: 10px;
+    padding: 15px;
     text-align: center;
-  }
-  
-  /* cards */
-  .card {
+    justify-content: space-around;
+}
+
+/* Cards */
+.card {
     background: #1F2937;
     padding: 20px;
     margin: 10px;
     border-radius: 10px;
-  }
+}
+
