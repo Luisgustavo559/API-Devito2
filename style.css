@@ -19,8 +19,7 @@ body {
     height: 100vh;
   }
   
-  /* botões */
-  button {
+ a{
     background: #FF4F81;
     border: none;
     padding: 10px 30px;
