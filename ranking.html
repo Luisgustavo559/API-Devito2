@@ -1,14 +1,7 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Corredores | Sakura Racing</title>
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Syncopate:wght@700&display=swap" rel="stylesheet">
-  
-  <style>
+
+    <style>
+        
+        
     /* RESET & VARIÁVEIS */
     :root {
       --rosa-neon: #ff1493;
@@ -25,17 +18,16 @@
     body {
       font-family: 'Montserrat', sans-serif;
       color: #e0e0e0;
-      overflow: hidden;
+      overflow: hidden; /* Evita rolagem na página de escolha */
       background-color: var(--dark-bg);
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       min-height: 100vh;
-      position: relative;
     }
 
-    /* FUNDO E CANVAS */
+    /* FUNDO E CANVAS (Mantendo a conexão visual com a página inicial) */
     .fundo-realista {
       position: fixed;
       top: 0;
@@ -57,25 +49,25 @@
       pointer-events: none;
     }
 
-    /* LINK DE VOLTAR NO TOPO (Substitui o primeiro "Início") */
-    .voltar-topo {
+    /* CABEÇALHO COM O TÍTULO */
+    header {
       position: absolute;
-      top: 30px;
-      left: 40px;
-      color: #fff;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1rem;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      transition: color 0.3s ease;
-      z-index: 5;
+      top: 5vh;
+      text-align: center;
+      width: 100%;
+      z-index: 2;
     }
 
-    .voltar-topo:hover {
+    header h1 {
+      font-family: 'Syncopate', sans-serif;
+      font-size: clamp(1.5rem, 4vw, 3rem);
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      text-shadow: 0 4px 20px rgba(0,0,0,0.8);
+    }
+    
+    header h1 span {
       color: var(--rosa-neon);
     }
 
@@ -93,49 +85,37 @@
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8), inset 0 0 20px rgba(255, 20, 147, 0.05);
       z-index: 2;
       width: 90%;
-      max-width: 400px;
+      max-width: 450px;
       animation: fadeIn 1s ease-out;
     }
 
     .centro h2 {
-      font-family: 'Syncopate', sans-serif;
-      font-size: 1.8rem;
-      margin-bottom: 30px;
+      font-size: 1.6rem;
+      margin-bottom: 40px;
+      font-weight: 600;
       color: #fff;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      text-shadow: 0 0 10px rgba(255, 20, 147, 0.5);
-    }
-
-    /* ESTILIZAÇÃO DO INPUT */
-    input {
-      width: 100%;
-      padding: 15px 20px;
-      margin-bottom: 30px;
-      background: rgba(0, 0, 0, 0.4);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      border-radius: 12px;
-      color: #fff;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 1rem;
-      outline: none;
-      transition: all 0.3s ease;
-    }
-
-    input::placeholder {
-      color: rgba(255, 255, 255, 0.5);
-      text-transform: uppercase;
-      font-size: 0.9rem;
       letter-spacing: 1px;
     }
 
-    input:focus {
-      border-color: var(--rosa-neon);
-      background: rgba(0, 0, 0, 0.6);
-      box-shadow: 0 0 15px rgba(255, 20, 147, 0.3);
+    /* OPÇÕES E BOTÕES */
+    .opcao-container {
+      margin-bottom: 30px;
     }
 
-    /* BOTÃO INÍCIO */
+    .opcao-container:last-child {
+      margin-bottom: 0;
+    }
+
+    .opcao-container p {
+      font-size: 0.9rem;
+      color: var(--rosa-claro);
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 600;
+    }
+
+    /* Botão Neon Cyberpunk */
     .btn {
       display: block;
       width: 100%;
@@ -154,6 +134,7 @@
       overflow: hidden;
     }
 
+    /* Efeito de luz passando pelo botão no Hover */
     .btn::before {
       content: '';
       position: absolute;
@@ -175,7 +156,71 @@
     .btn:hover::before {
       left: 100%;
     }
+    .ranking-table-container {
+      width: 100%;
+      overflow-x: auto;
+      margin-top: 20px;
+    }
 
+    .ranking-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    .ranking-table th {
+      font-family: 'Syncopate', sans-serif;
+      font-size: 0.65rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--rosa-neon);
+      padding: 15px;
+      border-bottom: 1px solid var(--border-pink);
+    }
+
+    .ranking-table td {
+      padding: 20px 15px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      font-size: 0.95rem;
+      transition: background 0.3s ease;
+    }
+
+    .ranking-table tr:hover td {
+      background: rgba(255, 20, 147, 0.03);
+    }
+
+    .ranking-table .points {
+      font-family: 'Syncopate', sans-serif;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    /* Estilo para o Top 3 */
+    .top-three td {
+      background: rgba(255, 20, 147, 0.05);
+    }
+
+    .pos-badge {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      background: var(--rosa-neon);
+      color: #000;
+      font-family: 'Syncopate', sans-serif;
+      font-weight: 700;
+      font-size: 0.8rem;
+      border-radius: 6px;
+      box-shadow: 0 0 15px rgba(255, 20, 147, 0.4);
+    }
+
+    @media (max-width: 600px) {
+      .ranking-table th, .ranking-table td {
+        padding: 12px 8px;
+        font-size: 0.8rem;
+      }
+    }
     /* ANIMAÇÃO DE ENTRADA */
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(30px); }
@@ -188,14 +233,71 @@
   <div class="fundo-realista"></div>
   <canvas id="sakura-canvas"></canvas>
 
-  <a href="index.html" class="voltar-topo">← Início</a>
+  <header>
+    <h1><span>Sakura</span> Racing</h1>
+  </header>
 
   <div class="centro">
-    <h2>Corredores</h2>
+   
+    <div class="opcao-container">
+        <div class="section-divider"></div>
 
-    <input type="text" placeholder="Nome">
-
-    <a class="btn">Voltar ao Início</a>
+        <article class="glass-panel" id="ranking">
+          <div class="panel-body">
+            <div class="label-chip">Temporada 2025</div>
+            <h2>Classificação Geral</h2>
+            
+            <div class="ranking-table-container">
+                <table class="ranking-table">
+                  <thead>
+                    <tr>
+                      <th>Pos</th>
+                      <th>Piloto</th>
+                      <th>Equipe</th>
+                      <th>Pontos</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="top-three">
+                      <td><span class="pos-badge">1</span></td>
+                      <td><strong>Akira Tanaka</strong></td>
+                      <td>Sakura Racing</td>
+                      <td class="points">215</td>
+                    </tr>
+                    <tr class="top-three">
+                      <td><span class="pos-badge">2</span></td>
+                      <td><strong>Kenji Sato</strong></td>
+                      <td>Sakura Racing</td>
+                      <td class="points">198</td>
+                    </tr>
+                    <tr class="top-three">
+                      <td><span class="pos-badge">3</span></td>
+                      <td><strong>Yumi Nara</strong></td>
+                      <td>TechSolutions</td>
+                      <td class="points">185</td>
+                    </tr>
+                    <tr>
+                      <td>4</td>
+                      <td>Lucas Silva</td>
+                      <td>Cryptonagec</td>
+                      <td class="points">160</td>
+                    </tr>
+                    <tr>
+                      <td>5</td>
+                      <td>Hiroshi Ono</td>
+                      <td>Sakura Racing</td>
+                      <td class="points">142</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+      
+              <p style="margin-top: 30px; font-size: 0.8rem; opacity: 0.6;">
+                * Ranking atualizado após o Grande Prêmio do senai.
+              </p>
+            </div>
+          </article>
+    </div>
   </div>
 
   <script>
@@ -206,7 +308,7 @@
     const ctx = canvas.getContext('2d');
     let width, height;
     let petals = [];
-    const NUM_PETALS = 50;
+    const NUM_PETALS = 50; // Quantidade ajustada para uma tela focada
 
     function resizeCanvas() {
         width = canvas.width = window.innerWidth;
@@ -227,7 +329,7 @@
         }
 
         update() {
-            this.x += this.vx + Math.sin(this.y * 0.01) * 0.5;
+            this.x += this.vx + Math.sin(this.y * 0.01) * 0.5; // Vento suave
             this.y += this.vy;
             this.rotation += this.rotationSpeed;
             this.flip += this.flipSpeed;
@@ -281,6 +383,6 @@
     window.addEventListener('resize', resizeCanvas);
     init2D();
     animate2D();
-  </script>
-</body>
-</html>
+  
+   
+</script>
