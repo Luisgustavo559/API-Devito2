@@ -538,7 +538,7 @@ body{
 </div>
 
 <nav class="navbar" id="navbar" aria-label="Navegação principal">
-  <a href="#" class="nav-link" onclick="closeNav()">
+  <a href="dashboard.html" class="nav-link" onclick="closeNav()">
     <span class="icon">◈</span> Dashboard
   </a>
   <a href="ranking.html" class="nav-link">
@@ -548,7 +548,7 @@ body{
     <span class="icon">＋</span> Novo Corredor
   </a>
   <div class="nav-sep"></div>
-  <a href="#" class="nav-link nav-danger">
+  <a href="index.html" class="nav-link nav-danger">
     <span class="icon">⏻</span> Sair do Sistema
   </a>
 </nav>
@@ -585,6 +585,8 @@ body{
     <div class="form-group">
       <label class="form-label" for="input-nome">ID da Unidade</label>
       <input class="form-input" type="text" id="input-nome" placeholder="Ex: RX-7 Phantom" autocomplete="off">
+      <label class="form-label" for="input-nome">Equipe</label>
+      <input class="form-input" type="text" id="input-nome" placeholder="Ex: Ferrari" autocomplete="off">
     </div>
     <div class="form-group">
       <label class="form-label" for="input-status">Status Operacional</label>
@@ -637,7 +639,7 @@ function render(){
       <div class="status-row">
         <div class="status-tag ${item.status}">
           <div class="dot"></div>
-          ${isAtivo ? 'Ready to Race' : 'Under Repair'}
+          ${isAtivo ? 'Sistema ativo' : 'Em manutenção'}
         </div>
         <button class="btn-delete" onclick="remove(${item.id})" aria-label="Remover ${escapeHtml(item.nome)}">✕</button>
       </div>

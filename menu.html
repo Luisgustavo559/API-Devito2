@@ -475,6 +475,22 @@
       text-shadow: none;
     }
 
+    .nav-danger{color:var(--danger)!important;margin-top:auto}
+
+    .nav-link{
+  text-decoration:none;
+  color:var(--text-mid);
+  font-size:0.9rem;font-weight:600;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  padding:14px 16px;
+  border-radius:10px;
+  transition:var(--t);
+  display:flex;align-items:center;gap:12px;
+  position:relative;overflow:hidden;
+}
+
+
     /* ─── ANIMATIONS ─── */
     @keyframes heroReveal {
       from { opacity: 0; transform: translateY(30px); }
@@ -510,14 +526,19 @@
       <span></span>
     </button>
   </nav>
-
+  span style="font-family:'Orbitron',monospace;letter-spacing:4px">SAKURA <span>RACING</span></span>
+</div>
   <div class="side-menu" id="side-menu">
     <a href="#inicio">Início</a>
+    <a href="corredores1.html">Corredores</a>
     <a href="dashboard.html">Dashboard</a>
     <a href="voltas.html">Voltas</a>
     <a href="#equipe">A Equipe</a>
     <a href="#uniforme">Uniforme</a>
     <a href="#carro">A Máquina</a>
+    <a href="index.html"  class="nav-link nav-danger">
+      <span  class="icon">⏻</span> Sair do Sistema
+    </a>
   </div>
 
   <header class="hero" id="inicio">
@@ -564,7 +585,7 @@
     <article class="glass-panel" id="uniforme">
       <div class="img-wrapper ratio-wide">
         <img
-          src="Foto/menu3.png"
+          src="Foto/uni.png"
           alt="Uniforme Sakura Racing"
           onerror="this.src='https://images.unsplash.com/photo-1541443131876-44b03de101c5?q=80&w=1400&auto=format&fit=crop'"
         >

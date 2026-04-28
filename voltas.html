@@ -21,6 +21,52 @@
       padding: 0;
       box-sizing: border-box;
     }
+    .navbar{
+  position:fixed;top:0;right:-320px;
+  width:320px;height:100%;
+  background:rgba(6,6,8,0.95);
+  backdrop-filter:blur(30px);
+  -webkit-backdrop-filter:blur(30px);
+  border-left:1px solid var(--border-pink);
+  z-index:1000;
+  padding:100px 40px 40px;
+  display:flex;flex-direction:column;gap:8px;
+  transition:right 0.5s var(--ease);
+}
+.navbar::before{
+  content:'';
+  position:absolute;top:0;left:0;
+  width:1px;height:100%;
+  background:linear-gradient(to bottom,transparent,var(--sakura),transparent);
+  opacity:.5;
+}
+.navbar.open{right:0}
+
+.nav-link{
+  text-decoration:none;
+  color:var(--text-mid);
+  font-size:0.9rem;font-weight:600;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  padding:14px 16px;
+  border-radius:10px;
+  transition:var(--t);
+  display:flex;align-items:center;gap:12px;
+  position:relative;overflow:hidden;
+}
+.nav-link::before{
+  content:'';
+  position:absolute;inset:0;
+  background:var(--sakura-dim);
+  transform:translateX(-100%);
+  transition:transform 0.4s var(--ease);
+  border-radius:10px;
+}
+.nav-link:hover{color:var(--text)}
+.nav-link:hover::before{transform:translateX(0)}
+.nav-link .icon{font-size:14px;opacity:.7}
+.nav-sep{height:1px;background:var(--border);margin:10px 0}
+.nav-danger{color:var(--danger)!important;margin-top:auto}
 
     body {
       font-family: 'Montserrat', sans-serif;
@@ -216,6 +262,21 @@
       <a class="btn">Registrar</a>
     </div>
   </div>
+  <nav class="navbar" id="navbar" aria-label="Navegação principal">
+    <a href="dashboard.html" class="nav-link" onclick="closeNav()">
+      <span class="icon">◈</span> Dashboard
+    </a>
+    <a href="ranking.html" class="nav-link">
+      <span class="icon">◉</span> Ranking Global
+    </a>
+    <a href="#" class="nav-link" onclick="openModal();closeNav()">
+      <span class="icon">＋</span> Novo Corredor
+    </a>
+    <div class="nav-sep"></div>
+    <a href="#" class="nav-link nav-danger">
+      <span class="icon">⏻</span> Sair do Sistema
+    </a>
+  </nav>
 
   <script>
     /* =======================================================
